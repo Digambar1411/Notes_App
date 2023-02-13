@@ -3,4 +3,9 @@
     flex-direction: row;
     flex-wrap: wrap;
     padding: 1rem;
+    gap:1rem;
+}
+
+.empty-notes{
+    text-align: center;
 }
