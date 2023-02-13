@@ -1,24 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState} from 'react';
 import './App.css';
+import { NotesList} from "../src/components"
 
 function App() {
+
+  interface Note {
+    id:string,
+    title:string,
+    desc:string,
+  }
+
+  const [notes, setNotes]= useState<Note[]>([
+    {
+      id:(new Date).toString(),
+      title:"node 1",
+      desc:"meeting at 2pm",
+    },
+  ]);
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+     <h1>notes app</h1>
+     <NotesList notes={notes} setNotes={setNotes}/>
     </div>
   );
 }
